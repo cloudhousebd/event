@@ -18,7 +18,7 @@
                     <h1>Your Registration is Now <br><b class="text-success">Pending for Payment</b>. </h1>
                     <br> <h3>We are working on payment process. We will notify you ASAP.</h3>
 
-                    <img src="{{ url('side.png') }}" width="25%" class="pt-4 mt-4" alt="">
+                    <img src="{{ url('side.png') }}" class="dashboard_banner" class="pt-4 mt-4" alt="">
 
                 </div>
             </div>

@@ -14,6 +14,14 @@
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
     <link rel="stylesheet" href="{{ url('build/assets/app-BaVMVknW.css') }}">
 
+    <style>
+        .dashboard_banner{
+            width: 450px;
+            max-width: 100%;
+            padding: 30px 0 0 0;
+        }
+    </style>
+
     <!-- Scripts -->
     <script src="{{ url('build/assets/app-CrG75o6_.js') }}"></script>
 </head>

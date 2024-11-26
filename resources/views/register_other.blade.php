@@ -6,7 +6,7 @@
 
     <div class="row justify-content-center">
         <div class="col-md-6 pb-4 pt-4">
-            <img src="{{ url('side.png') }}" width="95%" alt="">
+            <img src="{{ url('side.png') }}" width="100%" alt="">
         </div>
         <div class="col-md-6">
             <div class="card">
