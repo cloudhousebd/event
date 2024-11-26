@@ -3,10 +3,9 @@
 @section('content')
 <div class="container">
     <h3 class="pb-4 text-center"> If you are a Students of Jahangirnagar University <a href="{{ route('register.ju') }}">please click here to register.</a> </h3>
-    <br>
 
     <div class="row justify-content-center">
-        <div class="col-md-6">
+        <div class="col-md-6 pb-4 pt-4">
             <img src="{{ url('side.png') }}" width="95%" alt="">
         </div>
         <div class="col-md-6">
