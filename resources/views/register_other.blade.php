@@ -5,7 +5,7 @@
     <h3 class="pb-4 text-center"> If you are a Students of Jahangirnagar University <a href="{{ route('register.ju') }}">please click here to register.</a> </h3>
 
     <div class="row justify-content-center">
-        <div class="col-md-6 pb-4 pt-4">
+        <div class="col-md-6 pb-4">
             <img src="{{ url('side.png') }}" width="100%" alt="">
         </div>
         <div class="col-md-6">

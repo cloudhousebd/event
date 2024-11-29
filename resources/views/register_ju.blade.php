@@ -5,7 +5,7 @@
     <h3 class="pb-4 text-center"> This form is for Students of Jahangirnagar University Only. For others <a href="{{ route('register.other') }}">please click here to register.</a> </h3>
 
     <div class="row justify-content-center">
-        <div class="col-md-6 pb-4 pt-4">
+        <div class="col-md-6 pb-4">
             <img src="{{ url('side.png') }}" width="100%" alt="">
         </div>
         <div class="col-md-6">
