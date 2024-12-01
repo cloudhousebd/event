@@ -22,7 +22,7 @@
                             <div class="col-md-6">
                                 <select id="gender" type="text" class="form-select form-control @error('gender') is-invalid @enderror" name="gender" value="{{ old('gender') }}" required autocomplete="gender">
                                     <option value="male">Male</option>
-                                    <option value="female">Female</option>
+
                                 </select>
                                 @error('gender')
                                     <span class="invalid-feedback" role="alert">
