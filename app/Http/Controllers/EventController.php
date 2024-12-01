@@ -25,4 +25,5 @@ class EventController extends Controller
     {
         return view('register_other');
     }
+
 }

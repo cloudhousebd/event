@@ -7,7 +7,13 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <meta property="og:url"           content="https://jusiks.org" />
+    <meta property="og:type"          content="website" />
+    <meta property="og:title"         content="Jahangirnagar University Islamic Conference 2024"/>
+    <meta property="og:description"   content="Jahangirnagar University organizing an Islamic Conference 2024 in their campus on December 14, 2024" />
+    <meta property="og:image"         content="http://jusiks.org/side.png" />
+
+    <title>{{ config('app.name', 'JUIC') }}</title>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">
@@ -36,6 +42,14 @@
     <script src="{{ url('build/assets/app-CrG75o6_.js') }}"></script>
 </head>
 <body>
+    <div id="fb-root"></div>
+<script>(function(d, s, id) {
+var js, fjs = d.getElementsByTagName(s)[0];
+if (d.getElementById(id)) return;
+js = d.createElement(s); js.id = id;
+js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
