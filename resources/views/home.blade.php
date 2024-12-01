@@ -19,6 +19,7 @@
                         <a href="{{ url($card_url->url ?? '') }}" class="btn btn-lg btn-success">Download Your Access Card</a>
 
                         <br>
+                        <br>
                     <div class="fb-share-button"  data-href="{{ url($card_url->url) }}"  data-layout="button_count"></div>
                     <br>
                     <img src="{{ url($card_url->url) }}" class="dashboard_banner" class="pt-4 mt-4" alt="">
