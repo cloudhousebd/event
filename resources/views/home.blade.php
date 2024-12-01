@@ -17,6 +17,11 @@
                 @if($trxInfo->bk_status=='Completed')
                         <h1 class="text-success">Your Payment and Registration is Successfully Complete.</h1>
                         <a href="{{ url($card_url->url ?? '') }}" class="btn btn-lg btn-success">Download Your Access Card</a>
+
+                        <br>
+                    <div class="fb-share-button"  data-href="{{ url($card_url->url) }}"  data-layout="button_count"></div>
+                    <br>
+                    <img src="{{ url($card_url->url) }}" class="dashboard_banner" class="pt-4 mt-4" alt="">
                 @else
 
                     <h1>Your Registration is Now <br><b class="text-success">Pending for Payment</b>. </h1>
@@ -32,10 +37,7 @@
 
                 @endif
                 <br>
-                <br>
-                <div class="fb-share-button"  data-href="{{ url($card_url->url) }}"  data-layout="button_count"></div>
-                    <br>
-                    <img src="{{ url($card_url->url) }}" class="dashboard_banner" class="pt-4 mt-4" alt="">
+
 
                 </div>
             </div>
