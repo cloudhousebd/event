@@ -5,6 +5,8 @@ use App\Http\Controllers\EventController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\TransactionController;
+use App\Http\Controllers\AdminController;
+use App\Http\Middleware\AdminAuthenticate;
 
 Auth::routes();
 
@@ -20,3 +22,14 @@ Route::get('/payment/bkash', [PaymentController::class, 'payment'])->name('url-p
 Route::post('/payment/bkash/create', [PaymentController::class, 'createPayment'])->name('url-create');
 Route::get('/payment/bkash/callback', [PaymentController::class, 'callback'])->name('url-callback');
 
+
+Route::get('/admin/login', [AdminController::class, 'showLoginForm'])->name('admin.login');
+Route::post('/admin/login', [AdminController::class, 'login']);
+
+Route::prefix('admin')->middleware(AdminAuthenticate::class)->group(function () {
+    Route::get('/', [AdminController::class, 'index'])->name('admin.index');
+    Route::get('/dashboard', [AdminController::class, 'index'])->name('admin.dashboard');
+    Route::get('/participants', [AdminController::class, 'participants'])->name('admin.participants');
+    Route::get('/transactions', [AdminController::class, 'transactions'])->name('admin.transactions');
+    // Add more admin routes here
+});
