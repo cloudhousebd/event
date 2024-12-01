@@ -12,7 +12,14 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('transactions', function (Blueprint $table) {
-            $table->id();
+            $table->id()->startingValue(420021001);
+            $table->string('user_id');
+            $table->string('amount');
+            $table->string('method')->nullable();
+            $table->string('bk_reference')->nullable();
+            $table->string('bk_status')->nullable();
+            $table->string('receive_amount')->nullable();
+            $table->string('note')->nullable();
             $table->timestamps();
         });
     }

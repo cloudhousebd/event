@@ -2,64 +2,25 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\PaymentController;
 use App\Models\Transaction;
 use Illuminate\Http\Request;
+use DB;
 
 class TransactionController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
+    public function success($pid)
     {
-        //
-    }
+        $payment = new PaymentController;
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
+        $res_array = json_decode($payment->queryPayment($pid));
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
+        $trx = Transaction::where('user_id', auth()->user()->id)->first();
+        //dd($trx->id);
+        DB::table('transactions')->where('id', $trx->id)->update([
+            'method' => 'bkash',
+        ]);
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(Transaction $transaction)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Transaction $transaction)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, Transaction $transaction)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Transaction $transaction)
-    {
-        //
+        DB::commit();
     }
 }
