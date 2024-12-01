@@ -140,6 +140,7 @@
                         </div>
 
                         <hr>
+                            <h3 class="text-center text-danger">It is mandatory to bring your <b>Student ID Card</b> to get access to the Event.</h3>
                             <h3 class="text-center">You need to pay 300 taka to complete the registration process and get access pass.</h3>
                         <hr>
 
