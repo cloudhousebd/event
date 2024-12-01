@@ -46,6 +46,7 @@
                 <span class="response">bKash trx ID: {{ $response }}</span>
             @endif
         </p>
+        <a href="{{ url('/') }}" class="btn btn-success btn-lg">Return Home</a>
     </div>
 </body>
 </html>
