@@ -21,6 +21,11 @@ class EventController extends Controller
         return view('register_ju');
     }
 
+    public function alumniRegistration()
+    {
+        return view('register_alumni');
+    }
+
     public function otherRegistration()
     {
         return view('register_other');

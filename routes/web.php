@@ -15,6 +15,7 @@ Route::get('/', [EventController::class, 'index'])->name('index');
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/registration/ju', [EventController::class, 'juRegistration'])->name('register.ju');
+Route::get('/registration/alumni', [EventController::class, 'alumniRegistration'])->name('register.alumni');
 Route::get('/registration/others', [EventController::class, 'otherRegistration'])->name('register.other');
 
 

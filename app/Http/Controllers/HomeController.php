@@ -21,6 +21,8 @@ class HomeController extends Controller
     {
         if(auth()->user()->university == 'Jahangir Nagar University'){
             $amount = 100;
+        }elseif(auth()->user()->university == 'Jahangirnagar University Alumni'){
+            $amount = 00;
         }else{
             $amount = 300;
         }

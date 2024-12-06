@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container">
-    <h3 class="pb-4 text-center"> If you are a Students of Jahangirnagar University <a href="{{ route('register.ju') }}">please click here to register.</a> </h3>
+    <h3 class="pb-4 text-center"> If you are a Current Students of Jahangirnagar University <a href="{{ route('register.ju') }}">please click here to register.</a> </h3>
 
     <div class="row justify-content-center">
         <div class="col-md-6 pb-4">
@@ -10,7 +10,7 @@
         </div>
         <div class="col-md-6">
             <div class="card">
-                <div class="card-header">{{ __('Registration for Others') }}</div>
+                <div class="card-header">{{ __('Registration for JU Alumni') }}</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">
@@ -80,7 +80,7 @@
                             <label for="university" class="col-md-4 col-form-label text-md-end">{{ __('University') }}</label>
 
                             <div class="col-md-6">
-                                <input id="university" type="text" class="form-control @error('university') is-invalid @enderror" name="university" value="{{ old('university') }}" required autocomplete="university">
+                                <input id="university" type="text" class="form-control @error('university') is-invalid @enderror" name="university" value="{{ old('university') ?? 'Jahangirnagar University Alumni' }}" readonly required autocomplete="university">
 
                                 @error('university')
                                     <span class="invalid-feedback" role="alert">
@@ -105,12 +105,16 @@
                         </div>
 
                         <div class="row mb-3">
-                            <label for="education_year" class="col-md-4 col-form-label text-md-end">{{ __('Education Year') }}</label>
+                            <label for="batch" class="col-md-4 col-form-label text-md-end">{{ __('Batch') }}</label>
 
                             <div class="col-md-6">
-                                <input id="education_year" type="text" class="form-control @error('education_year') is-invalid @enderror" name="education_year" value="{{ old('education_year') }}" required autocomplete="education_year">
-
-                                @error('education_year')
+                                <select id="batch" type="text" class="form-select form-control @error('batch') is-invalid @enderror" name="batch" value="{{ old('batch') }}" required autocomplete="batch">
+                                    <option value="">Please Select</option>
+                                    @for ($x=1;$x<46;$x++)
+                                    <option value="{{ $x }}">{{ $x }}</option>
+                                    @endfor
+                                </select>
+                                @error('batch')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -141,16 +145,16 @@
                         </div>
 
                         <hr>
-                            <h3 class="text-center text-danger">It is mandatory to bring your <b>Student ID Card</b> to get access to the Event.</h3>
-                            <h3 class="text-center">You need to pay 300 taka to complete the registration process and get access pass.</h3>
+
+                            <h3 class="text-center">You may need to pay any amount of your choice to complete the registration process and get access pass.</h3>
                         <hr>
 
-                        <input type="hidden" name="batch" value="-">
+                        <input type="hidden" name="education_year" value="-">
                         <input type="hidden" name="hall" value="-">
 
                         <div class="row mb-0">
                             <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary disabled">
+                                <button type="submit" class="btn btn-primary">
                                     {{ __('Register') }}
                                 </button>
                             </div>
