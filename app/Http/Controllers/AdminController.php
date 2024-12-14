@@ -39,7 +39,7 @@ class AdminController extends Controller
 
     public function participants()
     {
-        $participants = User::all();
+        $participants = User::join('transactions', 'transactions.user_id', '=', 'users.id')->where('transactions.bk_status', 'Completed')->select('users.*')->get();
         return view('admin.dashboard', compact('participants'));
     }
 
